@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Web-Services</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Web Services</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Town</th>
+        <th>ZipCode</th>
+        <th>Year of birth</th>
+        <th>Age</th>
+    </tr>
+    <tbody id="user_table"></tbody>
+</table>
+</body>
+
+<script>
+    let users = [
+        {
+            name: "Morten Feldt",
+            town: "Valby",
+            zipCode: 2500,
+            yearOfBirth: 1984,
+            age: 36,
+        },
+        {
+            name: "Jörg Oertel",
+            town: "Lyngby",
+            zipCode: 2800,
+            yearOfBirth: 1977,
+            age: 43,
+        },
+    ];
+
+    let userTable = users.map(
+        (user) =>
+            `<tr><td>${user.name}</td><td>${user.town}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`).join("");
+
+    document.getElementById("user_table").innerHTML = userTable;
+</script>
+</html>
