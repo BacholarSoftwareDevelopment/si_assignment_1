@@ -26,6 +26,12 @@ _Morten Feldt and Jörg Oertel_
 
 * * *
 
+## SOAP Client Structure
+
+![Web Services Structure](./images/soap_consumer.png)
+
+* * *
+
 **Buissness Context**
 
 
