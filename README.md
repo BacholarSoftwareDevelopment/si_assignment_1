@@ -20,6 +20,12 @@ _Morten Feldt and Jörg Oertel_
 
 * * * 
 
+## SOAP Provider Structure
+
+![Web Services Structure](./images/soap_provider.png)
+
+* * *
+
 **Buissness Context**
 
 
