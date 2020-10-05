@@ -1,4 +1,4 @@
-package dk.si.webservices.soap.produce;
+package dk.si.groupproject1.webservice.soap.produce;
 
 import localhost._8080.GetTownRequest;
 import localhost._8080.GetTownResponse;
@@ -26,10 +26,10 @@ public class TownEndpoint {
     /**
      * The @PayloadRoot annotation is then used by Spring WS to pick
      * the handler method, based on the message’s namespace and localPart.
-     * <p>
+     *
      * The @ResponsePayload annotation makes Spring WS map the
      * returned value to the response payload.
-     * <p>
+     *
      * The @RequestPayload annotation indicates that the incoming
      * message will be mapped to the method’s request parameter.
      *
