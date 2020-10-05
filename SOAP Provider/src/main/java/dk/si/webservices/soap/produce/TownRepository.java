@@ -1,6 +1,6 @@
 package dk.si.webservices.soap.produce;
 
-import localhost._8080.Town;
+import localhost._8090.Town;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 

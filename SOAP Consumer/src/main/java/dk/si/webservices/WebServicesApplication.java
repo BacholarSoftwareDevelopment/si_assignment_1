@@ -18,10 +18,6 @@ public class WebServicesApplication {
     CommandLineRunner lookup(TownClient quoteClient) {
         return args -> {
             Integer zipCode = 2800;
-
-/*            if (args.length > 0) {
-                zipCode = args[0];
-            }*/
             GetTownResponse response = quoteClient.getTown(zipCode);
             System.err.println(response.getTown().getCountry());
             System.err.println(response.getTown().getName());
