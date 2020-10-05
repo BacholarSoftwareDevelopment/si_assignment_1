@@ -19,7 +19,7 @@ public class TownConfiguration {
     @Bean
     public TownClient countryClient(Jaxb2Marshaller marshaller) {
         TownClient client = new TownClient();
-        client.setDefaultUri("http://localhost:8080/ws");
+        client.setDefaultUri("http://localhost:8090/ws");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

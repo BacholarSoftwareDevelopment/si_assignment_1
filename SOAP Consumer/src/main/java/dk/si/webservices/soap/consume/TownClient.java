@@ -18,9 +18,9 @@ public class TownClient extends WebServiceGatewaySupport {
         log.info("Requesting location for " + zipCode);
 
         GetTownResponse response = (GetTownResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://localhost:8080/ws/towns", request,
+                .marshalSendAndReceive("http://localhost:8090/ws/towns", request,
                         new SoapActionCallback(
-                                "http://localhost:8080/GetTownRequest"));
+                                "http://localhost:8090/GetTownRequest"));
 
         return response;
     }

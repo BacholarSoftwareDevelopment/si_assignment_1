@@ -17,8 +17,11 @@ When make a GET request for details, this service will call an **RMI Registry** 
 ***
 #### Installation instructions
 1. Clone GitHub project
-2. Run **WebserviceApplication** in module **REST-RMI-SOAP [webservice]** package **dk.si.groupproject1.webservice**
-3. Run **Registry** in module **REST-RMI-SOAP [webservice]** package **dk.si.groupproject1.webservice**
+2. Run **WebServicesApplication** in module **SOAP Provider** in package **dk.si.webservices**  
+3. Run **WebserviceApplication** in module **REST-RMI-SOAP [webservice]** in package **dk.si.groupproject1.webservice**
+4. Run **Registry** in module **REST-RMI-SOAP [webservice]** in package **dk.si.groupproject1.webservice**  
+
+_If you have problems with missing files in SOAP then run **compile in Maven** to create Java files_
 ***
 #### User instructions
 ##### REST
@@ -46,7 +49,7 @@ Content-Type | application/json
 5. DELETE http://localhost:8080/persons/2  
 
 ##### SOAP Consuming  
-Run **WebServicesApplication** in module **SOAP Consumer [webservices (1)]** package **dk.si.webservices**
+Run **WebServicesApplication** in module **SOAP Consumer [webservices (1)]** in package **dk.si.webservices**
 ***
 ## Web Services Project Buisness Structure
 ![Web Services Structure](./images/webservice_diagramm.png)

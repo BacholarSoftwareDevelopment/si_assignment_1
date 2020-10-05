@@ -1,7 +1,7 @@
 package dk.si.groupproject1.webservice.soap.consume;
 
-import localhost._8080.GetTownRequest;
-import localhost._8080.GetTownResponse;
+import com.example.consumingwebservice.wsdl.GetTownRequest;
+import com.example.consumingwebservice.wsdl.GetTownResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
@@ -18,9 +18,9 @@ public class TownClient extends WebServiceGatewaySupport {
         log.info("Requesting location for " + zipCode);
 
         GetTownResponse response = (GetTownResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://localhost:8080/ws/towns", request,
+                .marshalSendAndReceive("http://localhost:8090/ws/towns", request,
                         new SoapActionCallback(
-                                "http://localhost:8080/GetTownRequest"));
+                                "http://localhost:8090/GetTownRequest"));
 
         return response;
     }
