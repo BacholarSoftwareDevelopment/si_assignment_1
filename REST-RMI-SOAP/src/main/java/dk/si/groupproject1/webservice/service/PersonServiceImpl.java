@@ -6,7 +6,7 @@ import dk.si.groupproject1.webservice.rest.model.Person;
 import dk.si.groupproject1.webservice.rest.repository.PersonRepository;
 import dk.si.groupproject1.webservice.rmi.Methods;
 import dk.si.groupproject1.webservice.soap.consume.TownClient;
-import localhost._8080.GetTownResponse;
+import com.example.consumingwebservice.wsdl.GetTownResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -12,14 +12,14 @@ public class TownConfiguration {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
-        marshaller.setContextPath("localhost._8080");
+        marshaller.setContextPath("com.example.consumingwebservice.wsdl");
         return marshaller;
     }
 
     @Bean
     public TownClient countryClient(Jaxb2Marshaller marshaller) {
         TownClient client = new TownClient();
-        client.setDefaultUri("http://localhost:8080/ws");
+        client.setDefaultUri("http://localhost:8090/ws");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
