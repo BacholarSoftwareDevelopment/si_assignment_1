@@ -1,4 +1,4 @@
-package dk.si.webservices.soap.produce;
+package dk.si.groupproject1.webservice.soap.produce;
 
 import localhost._8080.GetTownRequest;
 import localhost._8080.GetTownResponse;
