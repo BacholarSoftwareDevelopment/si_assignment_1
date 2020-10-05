@@ -26,8 +26,9 @@
 <h1>Web Services</h1>
 <table>
     <tr>
-        <th>Name</th>
-        <th>Town</th>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Country</th>
         <th>ZipCode</th>
         <th>Year of birth</th>
         <th>Age</th>
@@ -37,27 +38,25 @@
 </body>
 
 <script>
-    let users = [
-        {
-            name: "Morten Feldt",
-            town: "Valby",
-            zipCode: 2500,
-            yearOfBirth: 1984,
-            age: 36,
-        },
-        {
-            name: "Jörg Oertel",
-            town: "Lyngby",
-            zipCode: 2800,
-            yearOfBirth: 1977,
-            age: 43,
-        },
-    ];
 
-    let userTable = users.map(
+    async function fetchUsers() {
+        await fetch('http://localhost:8080/persons/1/details',{
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'default'
+        })
+            .then(res => res.json())
+            .then(user => {
+                document.getElementById("user_table").innerHTML =
+                    `<tr><td>${user.id}</td><td>${user.fullName}</td><td>${user.country}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`
+            })
+    }
+   fetchUsers();
+
+/*    userTable.map(
         (user) =>
-            `<tr><td>${user.name}</td><td>${user.town}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`).join("");
+            `<tr><td>${user.id}</td><td>${user.fullName}</td><td>${user.country}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`).join("");
 
-    document.getElementById("user_table").innerHTML = userTable;
+    document.getElementById("user_table").innerHTML = userTable;*/
 </script>
 </html>

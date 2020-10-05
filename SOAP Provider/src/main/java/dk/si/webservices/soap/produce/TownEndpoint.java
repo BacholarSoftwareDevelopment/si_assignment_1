@@ -1,7 +1,8 @@
 package dk.si.webservices.soap.produce;
 
-import localhost._8090.GetTownRequest;
-import localhost._8090.GetTownResponse;
+
+import localhost._8080.GetTownRequest;
+import localhost._8080.GetTownResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -14,7 +15,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
  */
 @Endpoint
 public class TownEndpoint {
-    private static final String NAMESPACE_URL = "http://localhost:8090";
+    private static final String NAMESPACE_URL = "http://localhost:8080";
 
     private TownRepository townRepository;
 

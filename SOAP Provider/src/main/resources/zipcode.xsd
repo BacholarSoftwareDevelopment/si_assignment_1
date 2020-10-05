@@ -2,8 +2,8 @@
 <!-- A namespace is unique. After regulations we use an url string, but it could be anything. -->
 <xs:schema
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns:tns="http://localhost:8090"
-        targetNamespace="http://localhost:8090"
+        xmlns:tns="http://localhost:8080"
+        targetNamespace="http://localhost:8080"
         elementFormDefault="qualified">
 
     <xs:element name="getTownRequest">
