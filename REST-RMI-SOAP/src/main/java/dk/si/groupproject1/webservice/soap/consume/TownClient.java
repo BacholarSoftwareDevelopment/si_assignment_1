@@ -1,7 +1,8 @@
 package dk.si.groupproject1.webservice.soap.consume;
 
-import com.example.consumingwebservice.wsdl.GetTownRequest;
-import com.example.consumingwebservice.wsdl.GetTownResponse;
+
+import localhost._8080.GetTownRequest;
+import localhost._8080.GetTownResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
