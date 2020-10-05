@@ -18,6 +18,4 @@ public class PersonSummary extends PersonIdentifier{
         this.yearOfBirth = yearOfBirth;
         this.zipCode = zipCode;
     }
-
-
 }

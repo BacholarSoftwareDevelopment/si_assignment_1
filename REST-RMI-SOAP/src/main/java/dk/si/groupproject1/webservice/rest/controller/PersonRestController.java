@@ -1,5 +1,6 @@
 package dk.si.groupproject1.webservice.rest.controller;
 
+import com.google.gson.Gson;
 import dk.si.groupproject1.webservice.exceptions.PersonNotFoundException;
 import dk.si.groupproject1.webservice.rest.domain.CreatePerson;
 import dk.si.groupproject1.webservice.rest.domain.PersonDetails;
@@ -9,12 +10,13 @@ import dk.si.groupproject1.webservice.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/persons")
 public class PersonRestController {
-
+    
     @Autowired
     PersonService service;
 
