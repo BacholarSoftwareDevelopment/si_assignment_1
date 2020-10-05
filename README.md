@@ -1,51 +1,14 @@
 # System Integration Mini Project Web Services
-
-**Author's Details**
-
-_Morten Feldt and Jörg Oertel_
-
-* * *
-
-**Web Services Used**
-
-* RMI
-* SOAP
-* REST
-
-* * *
-
-## Web Services Project Buisness Structure
-
-![Web Services Structure](./images/webservice_diagramm.png)
-
-* * * 
-
-## SOAP Provider Structure
-
-![Web Services Structure](./images/soap_provider.png)
-
-* * *
-
-## SOAP Client Structure
-
-![Web Services Structure](./images/soap_consumer.png)
-
-* * *
-
-**Buissness Context**
-
-
-
-
-
-_"si_assignment1_part1" includes REST, RMI and the SOAP consumer. "si_assignment1_part1" includes the SOAP provider._  
-
 ### SOFT2020FALL-SI-GroupProject1
 **[Assignment Link](https://datsoftlyngby.github.io/soft2020fall/resources/473f0f56-MP1-WS.pdf)**  
 ***
 #### Author's details
-**Team 8**  
-Jörg Oertel & Morten Feldt
+_**Jörg Oertel & Morten Feldt (Team 8)**_
+***
+#### Web Services Used
+* RMI
+* SOAP
+* REST
 ***
 #### Brief Summary
 This project system regards a person service, which have basic person information stored in DB like **full name**, **year of birth** and **zip code**.
@@ -54,10 +17,11 @@ When make a GET request for details, this service will call an **RMI Registry** 
 ***
 #### Installation instructions
 1. Clone GitHub project
-2. Run **Groupproject1Application** in package **dk.si.groupproject1**
-2. Run **Registry** in package **dk.si.groupproject1**
+2. Run **WebserviceApplication** in module **REST-RMI-SOAP [webservice]** package **dk.si.groupproject1.webservice**
+3. Run **Registry** in module **REST-RMI-SOAP [webservice]** package **dk.si.groupproject1.webservice**
 ***
 #### User instructions
+##### REST
 ***We recommend to use PostMan for instructions below***
 1. GET http://localhost:8080/persons/2/summary
 2. GET http://localhost:8080/persons/2/details (NOTICE, that details give you **age**, **town** and **country** for the person with the given id)
@@ -79,6 +43,18 @@ Content-Type | application/json
     "yearOfBirth": 1984,  
     "zipCode": 2500  
 }
-5. DELETE http://localhost:8080/persons/2
+5. DELETE http://localhost:8080/persons/2  
+
+##### SOAP Consuming  
+Run **WebServicesApplication** in module **SOAP Consumer [webservices (1)]** package **dk.si.webservices**
+***
+## Web Services Project Buisness Structure
+![Web Services Structure](./images/webservice_diagramm.png)
+*** 
+## SOAP Provider Structure
+![Web Services Structure](./images/soap_provider.png)
+***
+## SOAP Client Structure
+![Web Services Structure](./images/soap_consumer.png)
 ***
 
