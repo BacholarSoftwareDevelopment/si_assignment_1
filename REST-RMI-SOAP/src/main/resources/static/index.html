@@ -16,14 +16,14 @@
             text-align: left;
             padding: 8px;
         }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
+        tr {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 <h1>Web Services</h1>
+<b><i>Click on row to see details (age, town and country) for the given person</i></b>
 <h3>Persons Summary</h3>
 <table>
     <tr>
@@ -51,7 +51,6 @@
 </body>
 
 <script>
-
     async function fetchUsers() {
         await fetch('http://localhost:8080/persons/summary',{
             method: 'GET',
@@ -62,7 +61,7 @@
             .then(data => {
                 var users = "";
                 for (let user of data) {
-                    users += "<tr onclick='fetchUsersDetails(${user.id})'>";
+                    users += "<tr>";
                     users += "<td>" + user.id + "</td>";
                     users += "<td>" + user.fullName + "</td>";
                     users += "<td>" + user.yearOfBirth + "</td>";
@@ -70,12 +69,30 @@
                     users += "</tr>";
                 };
                 document.getElementById("user_table").innerHTML = users;
+                /*-----------------------------------*/
+                //Source of code below https://www.generacodice.com/en/articolo/78741/Adding+an+onclick+event+to+a+table+row
+                function addRowHandlers() {
+                    var table = document.getElementById("user_table");
+                    var rows = table.getElementsByTagName("tr");
+                    for (i = 0; i < rows.length; i++) {
+                        var currentRow = table.rows[i];
+                        var createClickHandler =
+                            function(row)
+                            {
+                                return function() {
+                                    var cell = row.getElementsByTagName("td")[0];
+                                    var id = cell.innerHTML;
+                                    fetchUsersDetails(id)
+                                };
+                            };
 
+                        currentRow.onclick = createClickHandler(currentRow);
+                    }
+                }
+                window.onload = addRowHandlers();
+                /*-----------------------------------*/
             })
     }
-   fetchUsers();
-
-/* ----------------------------------------------------------------------------------- */
 
     async function fetchUsersDetails(id) {
         await fetch('http://localhost:8080/persons/' + id + '/details',{
@@ -96,8 +113,8 @@
                     userdetails += "<td>" + data.country + "</td>";
                     userdetails += "</tr>";
                 document.getElementById("details_table").innerHTML = userdetails;
-
             })
     }
+    fetchUsers();
 </script>
 </html>
