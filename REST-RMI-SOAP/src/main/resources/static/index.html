@@ -16,9 +16,8 @@
             text-align: left;
             padding: 8px;
         }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
+        tr {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -47,7 +46,7 @@
         <th>Town</th>
         <th>Country</th>
     </tr>
-    <tbody id="details_table"></tbody>
+    <tbody id="user_table"></tbody>
 </table>
 </body>
 
@@ -104,19 +103,18 @@
             .then(res => res.json())
             .then(data => {
                 var userdetails = "";
-                userdetails += "<tr>";
-                userdetails += "<td>" + data.id + "</td>";
-                userdetails += "<td>" + data.fullName + "</td>";
-                userdetails += "<td>" + data.yearOfBirth + "</td>";
-                userdetails += "<td>" + data.age + "</td>";
-                userdetails += "<td>" + data.zipCode + "</td>";
-                userdetails += "<td>" + data.town + "</td>";
-                userdetails += "<td>" + data.country + "</td>";
-                userdetails += "</tr>";
+                    userdetails += "<tr>";
+                    userdetails += "<td>" + data.id + "</td>";
+                    userdetails += "<td>" + data.fullName + "</td>";
+                    userdetails += "<td>" + data.yearOfBirth + "</td>";
+                    userdetails += "<td>" + data.age + "</td>";
+                    userdetails += "<td>" + data.zipCode + "</td>";
+                    userdetails += "<td>" + data.town + "</td>";
+                    userdetails += "<td>" + data.country + "</td>";
+                    userdetails += "</tr>";
                 document.getElementById("details_table").innerHTML = userdetails;
             })
     }
     fetchUsers();
-
 </script>
 </html>
