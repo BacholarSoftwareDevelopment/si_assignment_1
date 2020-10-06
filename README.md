@@ -24,8 +24,11 @@ When make a GET request for details, this service will call an **RMI Registry** 
 _If you have problems with missing files in SOAP then run **compile in Maven** to create Java files_
 ***
 #### User instructions
+##### UI
+1. Go to http://localhost:8080/  
+2. Click on person-row in table
+3. See details in a table below for the clicked person
 ##### REST
-***We recommend to use PostMan for instructions below***
 1. GET http://localhost:8080/persons/2/summary
 2. GET http://localhost:8080/persons/2/details (NOTICE, that details give you **age**, **town** and **country** for the person with the given id)
 3. POST http://localhost:8080/persons/  
