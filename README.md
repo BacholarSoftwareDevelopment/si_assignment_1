@@ -38,7 +38,7 @@ Content-Type | application/json
 {  
     "fullName": "Mickey Mouse",  
     "yearOfBirth": 1910,  
-    "zipCode": 9090  
+    "zipCode": 2500  
 }  
 4. PUT http://localhost:8080/persons/2  
 **Header**  
@@ -47,7 +47,7 @@ Content-Type | application/json
 {  
     "fullName": "Donald Duck",  
     "yearOfBirth": 1915,  
-    "zipCode": 9090  
+    "zipCode": 2800 
 }
 5. DELETE http://localhost:8080/persons/2  
 
