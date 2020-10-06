@@ -24,39 +24,80 @@
 </head>
 <body>
 <h1>Web Services</h1>
+<h3>Persons Summary</h3>
 <table>
     <tr>
         <th>ID</th>
         <th>Full Name</th>
-        <th>Country</th>
-        <th>ZipCode</th>
         <th>Year of birth</th>
-        <th>Age</th>
+        <th>ZipCode</th>
     </tr>
     <tbody id="user_table"></tbody>
+</table>
+<hr>
+<h3>Person Details</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Year of birth</th>
+        <th>Age</th>
+        <th>ZipCode</th>
+        <th>Town</th>
+        <th>Country</th>
+    </tr>
+    <tbody id="details_table"></tbody>
 </table>
 </body>
 
 <script>
 
     async function fetchUsers() {
-        await fetch('http://localhost:8080/persons/1/details',{
+        await fetch('http://localhost:8080/persons/summary',{
             method: 'GET',
             mode: 'no-cors',
             cache: 'default'
         })
             .then(res => res.json())
-            .then(user => {
-                document.getElementById("user_table").innerHTML =
-                    `<tr><td>${user.id}</td><td>${user.fullName}</td><td>${user.country}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`
+            .then(data => {
+                var users = "";
+                for (let user of data) {
+                    users += "<tr onclick='fetchUsersDetails(${user.id})'>";
+                    users += "<td>" + user.id + "</td>";
+                    users += "<td>" + user.fullName + "</td>";
+                    users += "<td>" + user.yearOfBirth + "</td>";
+                    users += "<td>" + user.zipCode + "</td>";
+                    users += "</tr>";
+                };
+                document.getElementById("user_table").innerHTML = users;
+
             })
     }
    fetchUsers();
 
-/*    userTable.map(
-        (user) =>
-            `<tr><td>${user.id}</td><td>${user.fullName}</td><td>${user.country}</td><td>${user.zipCode}</td><td>${user.yearOfBirth}</td><td>${user.age}</td></tr>`).join("");
+/* ----------------------------------------------------------------------------------- */
 
-    document.getElementById("user_table").innerHTML = userTable;*/
+    async function fetchUsersDetails(id) {
+        await fetch('http://localhost:8080/persons/' + id + '/details',{
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'default'
+        })
+            .then(res => res.json())
+            .then(data => {
+                var userdetails = "";
+                    userdetails += "<tr>";
+                    userdetails += "<td>" + data.id + "</td>";
+                    userdetails += "<td>" + data.fullName + "</td>";
+                    userdetails += "<td>" + data.yearOfBirth + "</td>";
+                    userdetails += "<td>" + data.age + "</td>";
+                    userdetails += "<td>" + data.zipCode + "</td>";
+                    userdetails += "<td>" + data.town + "</td>";
+                    userdetails += "<td>" + data.country + "</td>";
+                    userdetails += "</tr>";
+                document.getElementById("details_table").innerHTML = userdetails;
+
+            })
+    }
 </script>
 </html>
