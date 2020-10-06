@@ -36,18 +36,18 @@ _If you have problems with missing files in SOAP then run **compile in Maven** t
 Content-Type | application/json  
 **Body**  
 {  
-    "fullName": "Morten FeldtTEST-3",  
-    "yearOfBirth": 1984,  
-    "zipCode": 2500  
+    "fullName": "Mickey Mouse",  
+    "yearOfBirth": 1910,  
+    "zipCode": 9090  
 }  
 4. PUT http://localhost:8080/persons/2  
 **Header**  
 Content-Type | application/json  
 **Body**  
 {  
-    "fullName": "Morten FeldtTEST",  
-    "yearOfBirth": 1984,  
-    "zipCode": 2500  
+    "fullName": "Donald Duck",  
+    "yearOfBirth": 1915,  
+    "zipCode": 9090  
 }
 5. DELETE http://localhost:8080/persons/2  
 
